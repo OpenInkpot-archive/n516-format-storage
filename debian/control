@@ -1,0 +1,21 @@
+Source: n516-format-storage
+Section: core
+Priority: optional
+Maintainer: Mikhail Gusarov <dottedmag@dottedmag.net>
+XCS-Cross-Host-Build-Depends: debhelper (>= 7)
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.8.3
+
+Package: n516-format-storage
+Architecture: all
+Depends: dosfstools
+Description: Hanvon N516 "storage" formatter
+ This package contains initscript which formats N516 "storage" partition
+ on first boot.
+
+Package: azbooka-n516-format-storage
+Architecture: all
+Depends: dosfstools
+Description: Hanvon N516 "storage" formatter -- Azbooka variant
+ This package contains initscript which formats Azbooka N516 "storage" partition
+ on first boot.

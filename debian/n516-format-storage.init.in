@@ -1,0 +1,14 @@
+#!/bin/sh -e
+
+if [ -e /var/lib/n516-format-storage/formatted ]; then
+    exit 0
+fi
+
+if ! grep -q /mnt/storage /proc/mounts; then
+    mkfs.vfat -F32 -n @VOLUME@ -m /dev/null /dev/mtdblock_storage
+    flash_eraseall -j /dev/mtd_STORAGE
+    mount /mnt/storage
+fi
+
+mkdir -p /var/lib/n516-format-storage
+touch /var/lib/n516-format-storage/formatted
