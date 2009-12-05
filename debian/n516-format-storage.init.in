@@ -6,7 +6,6 @@ fi
 
 if ! grep -q /mnt/storage /proc/mounts; then
     mkfs.vfat -F32 -n @VOLUME@ -m /dev/null /dev/mtdblock_storage
-    flash_eraseall -j /dev/mtd_STORAGE
     mount /mnt/storage
 fi
 
